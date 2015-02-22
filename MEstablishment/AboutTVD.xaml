@@ -1,0 +1,41 @@
+﻿<Window x:Name="window" x:Class="MEstablishment.AboutTVD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AboutTVD" Height="300" Width="400" WindowStyle="None" ResizeMode="NoResize" Background="#FF49E4A4" Foreground="White" WindowStartupLocation="CenterScreen" RenderTransformOrigin="0.5,0.5">
+	<Window.Resources>
+		<Storyboard x:Key="OnLoaded1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="window">
+				<EasingDoubleKeyFrame KeyTime="0" Value="2"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="window">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="window">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+	</Window.Resources>
+	<Window.RenderTransform>
+		<TransformGroup>
+			<ScaleTransform/>
+			<SkewTransform/>
+			<RotateTransform/>
+			<TranslateTransform/>
+		</TransformGroup>
+	</Window.RenderTransform>
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource OnLoaded1}"/>
+		</EventTrigger>
+	</Window.Triggers>
+    <Grid>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="246" Margin="10,44,0,0" Stroke="White" VerticalAlignment="Top" Width="380"/>
+        <Label Content="Giới thiệu phần mềm" HorizontalAlignment="Left" Margin="8,3,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" FontFamily="Segoe UI Light"/>
+        <Button Content="X" HorizontalAlignment="Left" Height="30" Margin="365,2,0,0" VerticalAlignment="Top" Width="33" Background="White" BorderBrush="White" Foreground="#FF49E4A4" FontSize="18" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" FontFamily="Segoe UI Light" Foreground="Black" Width="357" Height="226"><Run Language="vi-vn" Text="Material Establishment - Phần mềm thuyết trình"/><LineBreak/><Run Language="vi-vn"/><LineBreak/><Run Language="vi-vn" Text="Phát triển bởi TVD Studio: "/><LineBreak/><Run Language="vi-vn" Text="Công Thành Vũ - Phát triển chính"/><LineBreak/><Run Language="vi-vn"/><LineBreak/><Run Language="vi-vn" Text="Phần mềm được xây dựng dưới sự tuân theo các Điều khoản về Quyền Riêng tư và các điều khoản khác."/><LineBreak/><Run Language="vi-vn" Text=""/><LineBreak/><Run Language="vi-vn" Text="Copyright by TVD Studio"/><Run Background="White" Language="vi-vn" Text=" "/><Run Background="White" Text="©"/><Run Background="White" Language="vi-vn" Text=" 2015. "/><LineBreak/><Run Background="White" Language="vi-vn" Text="Mọi quyền được bảo lưu."/><LineBreak/><Run Language="vi-vn"/><LineBreak/><Run Language="vi-vn"/></TextBlock>
+
+    </Grid>
+</Window>
